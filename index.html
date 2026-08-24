@@ -1,0 +1,2051 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>縦長ラーニング | 漫画を読むように学ぶ</title>
+    <meta
+      name="description"
+      content="縦長ラーニングは、漫画を読むように短い学びを楽しめるコンテンツポータルです。"
+    >
+    <link rel="icon" href="assets/vertical-learning-logo-comic-safe-20260820.png">
+    <style data-comic-theme>
+      body { background-color: #f7f8fa; background-image: radial-gradient(rgba(22, 36, 59, .11) .8px, transparent .8px); background-size: 18px 18px; }
+      .category-tabs a.is-active { background: #e45745; box-shadow: 4px 4px 0 rgba(22, 36, 59, .16); transform: rotate(-1deg); }
+      .featured-stage { border: 2px solid #16243b; box-shadow: 8px 9px 0 rgba(22, 36, 59, .16), 0 24px 58px rgba(22, 36, 59, .16); }
+      .featured-stage::before { position: absolute; inset: 0; z-index: 1; background-image: radial-gradient(rgba(255, 255, 255, .22) 1px, transparent 1px); background-size: 12px 12px; content: ""; opacity: .25; pointer-events: none; mix-blend-mode: screen; }
+      .featured-stage::after { position: absolute; top: 20px; right: 28px; z-index: 2; width: 96px; height: 26px; background: #f3c64e; box-shadow: 4px 4px 0 rgba(22, 36, 59, .22); content: "NEW STORY"; color: #16243b; font-size: 10px; font-weight: 950; line-height: 26px; text-align: center; transform: rotate(5deg); pointer-events: none; }
+      .featured-chips span:nth-child(1) { background: rgba(228, 87, 69, .82); }
+      .featured-chips span:nth-child(2) { background: rgba(243, 198, 78, .92); color: #16243b; }
+      .featured-chips span:nth-child(3) { background: rgba(49, 91, 208, .88); }
+      .featured-rail-head h2, .row-heading h2 { position: relative; padding-left: 16px; }
+      .featured-rail-head h2::before, .row-heading h2::before { position: absolute; top: .18em; bottom: .12em; left: 0; width: 6px; background: #e45745; content: ""; transform: skewX(-10deg); }
+      .featured-rail-head h2::after, .row-heading h2::after { position: absolute; right: -12px; top: -2px; width: 8px; height: 8px; border-radius: 50%; background: #f3c64e; content: ""; }
+      .card-rail .hyper-card, .card-rail .free-card, .card-rail .post-card, .card-rail .story-card { border-width: 2px; box-shadow: 5px 6px 0 rgba(22, 36, 59, .15), 0 14px 28px rgba(22, 36, 59, .12); }
+      .card-rail .hyper-card:hover, .card-rail .free-card:hover, .card-rail .post-card:hover, .card-rail .story-card:hover { transform: translateY(-5px) rotate(-.5deg); }
+      .portal-footer { border-top: 2px solid #16243b; }
+    </style>
+    <style data-portal-redesign>
+      :root {
+        --vl-ink: #102a43;
+        --vl-ink-strong: #071f39;
+        --vl-cyan: #11b8c7;
+        --vl-cyan-deep: #078a99;
+        --vl-yellow: #ffd34f;
+        --vl-coral: #f27478;
+        --vl-muted: #64758a;
+        --vl-line: #d8e6eb;
+        --vl-surface: #f7fbfc;
+        --vl-surface-strong: #eaf5f7;
+        --vl-white: #ffffff;
+        --navy: var(--vl-ink);
+        --ink: var(--vl-ink);
+        --blue: var(--vl-cyan);
+        --green: var(--vl-coral);
+        --muted: var(--vl-muted);
+        --line: var(--vl-line);
+        --soft: var(--vl-surface);
+        --white: #ffffff;
+        --shadow: 0 8px 24px rgba(16, 42, 67, .08);
+        --radius: 14px;
+      }
+
+      body {
+        background: #fff;
+        background-image: none;
+        color: var(--ink);
+      }
+
+      .portal-header {
+        z-index: 30;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        width: min(1320px, calc(100% - 48px));
+        min-height: 76px;
+        margin: 0 auto;
+        padding: 8px 0;
+        border-bottom: 0;
+        background: rgba(255, 255, 255, .94);
+        box-shadow: 0 1px 0 rgba(17, 24, 39, .06);
+        backdrop-filter: blur(16px);
+      }
+
+      .portal-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        width: 250px;
+        max-width: none;
+      }
+
+      .portal-brand img {
+        width: 58px;
+        height: 58px;
+        flex: 0 0 58px;
+        border: 2px solid #122337;
+        border-radius: 14px;
+        object-fit: cover;
+        object-position: center;
+        box-shadow: 3px 4px 0 rgba(18, 35, 55, .16);
+        filter: none;
+      }
+
+      .portal-brand-name {
+        display: grid;
+        color: #122337;
+        font-size: 17px;
+        font-weight: 950;
+        letter-spacing: -.03em;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+
+      .portal-brand-name small {
+        margin-top: 4px;
+        color: #168fa1;
+        font-size: 8px;
+        font-weight: 950;
+        letter-spacing: .12em;
+      }
+
+      .portal-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(16px, 2vw, 30px);
+        min-width: 0;
+        padding: 0 18px;
+      }
+
+      .portal-nav a {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        min-height: 42px;
+        color: #202938;
+        font-size: 13px;
+        font-weight: 850;
+        white-space: nowrap;
+      }
+
+      .portal-nav a:first-child::after {
+        position: absolute;
+        right: 0;
+        bottom: 3px;
+        left: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--blue);
+        content: "";
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 9px;
+      }
+
+      .search-menu-button,
+      .robo-toggle-button {
+        min-height: 38px;
+        padding: 0 8px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        color: #233044;
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      .search-menu-button span { display: none; }
+      .robo-toggle-button::before { display: none; }
+      .search-menu-button:hover,
+      .robo-toggle-button:hover { color: var(--blue); }
+
+      .header-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        padding: 0 15px;
+        border-radius: 999px;
+        background: #f7cf30;
+        box-shadow: 0 6px 14px rgba(224, 176, 28, .18);
+        color: #1d2835;
+        font-size: 12px;
+        font-weight: 950;
+        white-space: nowrap;
+      }
+
+      .workspace {
+        width: min(1320px, calc(100% - 48px));
+        margin: 18px auto 0;
+      }
+
+      .content-portal {
+        gap: 30px;
+        padding: 0 0 26px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .category-tabs {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+        overflow: visible;
+        padding: 0;
+      }
+
+      .category-tabs a {
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 12px;
+        border: 1px solid #e5e8ed;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 5px 15px rgba(18, 35, 55, .04);
+        color: #293548;
+        font-size: 13px;
+      }
+
+      .category-tabs a::before {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: 7px;
+        border-radius: 7px;
+        background: #dff5f4;
+        content: "";
+      }
+
+      .category-tabs a:nth-child(2)::before { background: #e8efff; }
+      .category-tabs a:nth-child(3)::before { background: #fff2c6; }
+      .category-tabs a:nth-child(4)::before { background: #dff5e9; }
+      .category-tabs a:nth-child(5)::before { background: #fde2ea; }
+      .category-tabs a:nth-child(n + 6) { display: none; }
+      .category-tabs a.is-active {
+        border-color: #cfe4e7;
+        background: #fff;
+        box-shadow: 0 5px 15px rgba(18, 35, 55, .04);
+        color: #293548;
+        transform: none;
+      }
+
+      .featured-stage {
+        position: relative;
+        display: block;
+        height: clamp(280px, 30vw, 390px);
+        min-height: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #cfe9ea;
+        border-radius: 18px;
+        background: #e9fbfa;
+        box-shadow: 0 9px 24px rgba(18, 35, 55, .08);
+      }
+
+      .featured-stage::before {
+        z-index: 1;
+        background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, .36) 0 2px, transparent 2px 14px);
+        background-size: auto;
+        opacity: .25;
+        mix-blend-mode: normal;
+      }
+
+      .featured-stage::after {
+        top: 22px;
+        right: 22px;
+        z-index: 4;
+        width: 104px;
+        height: 46px;
+        background: #fff;
+        box-shadow: 0 4px 0 rgba(18, 35, 55, .08);
+        content: "3分から\A読める！";
+        color: #182536;
+        font-size: 11px;
+        font-weight: 950;
+        line-height: 1.3;
+        text-align: center;
+        white-space: pre;
+        transform: rotate(4deg);
+      }
+
+      .hero-intro {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 14% 16%, rgba(247, 207, 48, .25), transparent 18%),
+          radial-gradient(circle at 54% 88%, rgba(240, 91, 115, .13), transparent 24%),
+          linear-gradient(115deg, #fff 0%, #f7ffff 58%, #dff5f4 100%);
+        opacity: 1;
+        transition: opacity 260ms ease, transform 260ms ease;
+      }
+
+      .featured-stage:not(.is-intro) .hero-intro {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-14px);
+      }
+
+      .featured-stage.is-intro .featured-media,
+      .featured-stage.is-intro .featured-copy {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .hero-intro-copy {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: clamp(28px, 4vw, 56px);
+      }
+
+      .hero-intro-kicker {
+        margin: 0 0 10px;
+        color: #168fa1;
+        font-size: 13px;
+        font-weight: 950;
+        letter-spacing: .12em;
+      }
+
+      .hero-intro h1 {
+        margin: 0;
+        color: #122337;
+        font-size: clamp(29px, 4vw, 52px);
+        font-weight: 950;
+        letter-spacing: -.035em;
+        line-height: 1.17;
+      }
+
+      .hero-intro h1 em {
+        color: #168fa1;
+        font-style: normal;
+      }
+
+      .hero-intro-lead {
+        margin: 16px 0 0;
+        color: #344257;
+        font-size: clamp(13px, 1.35vw, 17px);
+        font-weight: 750;
+        line-height: 1.7;
+      }
+
+      .hero-intro-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 16px;
+      }
+
+      .hero-intro-chips span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 27px;
+        padding: 0 10px;
+        border-radius: 999px;
+        background: #168fa1;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      .hero-intro-chips span:nth-child(2) { background: #f7cf30; color: #263348; }
+      .hero-intro-chips span:nth-child(3) { background: #f05b73; }
+
+      .hero-intro-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        margin-top: 17px;
+        padding: 0 16px;
+        border: 1px solid #b9dfe2;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .9);
+        color: #157f8d;
+        font-size: 12px;
+        font-weight: 950;
+      }
+
+      .hero-intro-link:hover { background: #fff; border-color: #168fa1; }
+
+      .hero-intro-art {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-width: 0;
+        padding: 24px 34px 24px 0;
+      }
+
+      .hero-intro-art::before {
+        position: absolute;
+        top: 13%;
+        right: 12%;
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+        background: rgba(247, 207, 48, .33);
+        content: "";
+        filter: blur(24px);
+      }
+
+      .hero-intro-art img {
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: min(100%, 370px);
+        height: 100%;
+        border: 3px solid #122337;
+        border-radius: 22px;
+        object-fit: cover;
+        object-position: center;
+        box-shadow: 8px 9px 0 rgba(18, 35, 55, .16);
+        transform: rotate(3deg);
+      }
+
+      .hero-intro-thumb {
+        border-color: #b9dfe2;
+      }
+
+      .hero-intro-thumb img { object-position: center; }
+
+      .featured-media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        height: 100%;
+        min-height: 0;
+        border-radius: 17px;
+        background: #dff5f4;
+      }
+
+      .featured-media img { object-position: center; opacity: .88; }
+      .featured-media::after {
+        background: linear-gradient(90deg, rgba(255, 255, 255, .98) 0%, rgba(255, 255, 255, .87) 29%, rgba(255, 255, 255, .16) 64%, rgba(15, 87, 100, .15) 100%);
+      }
+
+      .featured-copy {
+        position: absolute;
+        inset: 0 auto 0 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: min(55%, 640px);
+        max-width: none;
+        padding: clamp(26px, 4vw, 54px);
+        pointer-events: none;
+      }
+
+      .featured-catch {
+        margin: 0;
+        color: var(--blue) !important;
+        font-size: clamp(16px, 1.8vw, 23px);
+        font-weight: 950;
+        letter-spacing: .02em;
+      }
+
+      .featured-copy .eyebrow,
+      .featured-copy h1,
+      .featured-copy p { color: #122337 !important; }
+
+      .featured-copy .eyebrow {
+        color: var(--blue) !important;
+        font-size: 15px;
+        font-weight: 950;
+      }
+
+      .featured-copy h1 {
+        max-width: 13ch;
+        font-size: clamp(30px, 4.4vw, 54px);
+        letter-spacing: -.02em;
+      }
+
+      .featured-summary {
+        max-width: 31em;
+        color: #334155 !important;
+        font-size: clamp(13px, 1.25vw, 17px);
+        font-weight: 750;
+        line-height: 1.75;
+      }
+
+      .featured-secondary {
+        min-height: 38px;
+        padding: 0 16px;
+        border: 1px solid #b9dfe2;
+        background: rgba(255, 255, 255, .84);
+        color: #157f8d !important;
+        pointer-events: auto;
+      }
+
+      .featured-chips { gap: 7px; }
+      .featured-chips span {
+        min-height: 28px;
+        padding: 0 10px;
+        background: rgba(22, 143, 161, .92) !important;
+        color: #fff !important;
+        font-size: 11px;
+      }
+
+      .featured-chips span:nth-child(2) { background: #f7cf30 !important; color: #293548 !important; }
+      .featured-chips span:nth-child(3) { background: #f05b73 !important; }
+
+      .featured-rail-head { margin-top: 2px; }
+      .featured-rail-head h2,
+      .row-heading h2 {
+        padding-left: 0;
+        color: #172336;
+        font-size: clamp(20px, 2vw, 25px);
+        letter-spacing: -.015em;
+      }
+
+      .featured-rail-head h2::before,
+      .row-heading h2::before {
+        top: .15em;
+        bottom: .15em;
+        left: -14px;
+        width: 5px;
+        border-radius: 3px;
+        background: var(--blue);
+        transform: none;
+      }
+
+      .featured-rail-head h2::after,
+      .row-heading h2::after { display: none; }
+
+      .featured-rail,
+      .card-rail {
+        gap: 12px;
+        padding: 2px 2px 15px;
+      }
+
+      .featured-thumb,
+      .card-rail .hyper-card,
+      .card-rail .free-card,
+      .card-rail .post-card,
+      .card-rail .story-card {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        min-height: 0;
+        padding: 0 0 11px;
+        overflow: hidden;
+        border: 1px solid #e4e8ed;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 5px 16px rgba(18, 35, 55, .07);
+        color: #182536;
+      }
+
+      .featured-thumb { flex: 0 0 clamp(180px, 18vw, 230px); }
+      .featured-thumb::after,
+      .card-rail .hyper-card::after,
+      .card-rail .free-card::after,
+      .card-rail .post-card::after,
+      .card-rail .story-card::after { display: none; }
+
+      .featured-thumb img {
+        position: static;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.42 / 1;
+        border-radius: 0;
+        object-fit: cover;
+      }
+
+      .featured-thumb > span,
+      .featured-thumb > strong,
+      .featured-thumb > small,
+      .card-rail .hyper-card > :not(.thumb-scene),
+      .card-rail .free-card > :not(.small-cover),
+      .card-rail .post-card > :not(.small-cover),
+      .card-rail .story-card > :not(.story-cover) {
+        position: static !important;
+        z-index: auto;
+        color: #182536 !important;
+      }
+
+      .featured-thumb > span,
+      .card-rail .hyper-card > span,
+      .card-rail .free-card > span,
+      .card-rail .post-card > span,
+      .card-rail .story-card > span {
+        width: fit-content;
+        margin: 9px 10px 0;
+        padding: 3px 7px;
+        border-radius: 999px;
+        background: #e0f5f4;
+        color: #197d89 !important;
+        font-size: 9px;
+        font-weight: 950;
+        letter-spacing: .05em;
+      }
+
+      .featured-thumb > strong,
+      .card-rail .hyper-card h3,
+      .card-rail .free-card h3,
+      .card-rail .post-card h3,
+      .card-rail .story-card h3 {
+        margin: 7px 10px 0;
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .featured-thumb > small,
+      .card-rail .hyper-card p,
+      .card-rail .free-card p,
+      .card-rail .post-card p,
+      .card-rail .story-card p {
+        margin: 5px 10px 0;
+        color: #718096 !important;
+        font-size: 11px;
+        font-weight: 750;
+        line-height: 1.4;
+      }
+
+      .card-rail .thumb-scene,
+      .card-rail .small-cover,
+      .card-rail .story-cover {
+        position: static;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 1.42 / 1;
+        border: 0;
+        border-radius: 0;
+      }
+
+      .card-rail .thumb-scene img,
+      .card-rail .small-cover img,
+      .card-rail .story-cover img { height: 100%; object-fit: cover; }
+
+      .content-row { gap: 12px; }
+      .row-heading h2::before { background: var(--green); }
+      .content-row:nth-of-type(3) .row-heading h2::before { background: #f7cf30; }
+      .content-row:nth-of-type(4) .row-heading h2::before { background: #3aa87c; }
+
+      .portal-footer {
+        display: grid;
+        grid-template-columns: minmax(220px, .8fr) minmax(0, 1.7fr);
+        align-items: start;
+        gap: 44px;
+        width: min(1320px, calc(100% - 48px));
+        margin: 18px auto 0;
+        padding: 28px 0 40px;
+        border-top: 1px solid #e4e8ed;
+      }
+
+      .portal-footer > div { gap: 10px; }
+      .portal-footer img { width: 32px; height: 32px; border-radius: 8px; }
+
+      .footer-brand {
+        align-items: flex-start !important;
+      }
+
+      .footer-brand strong { font-size: 15px; }
+      .footer-brand span { margin-top: 4px; font-size: 11px; }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .footer-links > div {
+        display: grid;
+        align-content: start;
+        gap: 7px;
+      }
+
+      .footer-links strong {
+        color: #263348;
+        font-size: 12px;
+      }
+
+      .footer-links a {
+        color: #738094;
+        font-size: 11px;
+      }
+
+      .footer-links a:hover { color: var(--blue); }
+
+      @media (max-width: 759px) {
+        .portal-header {
+          position: sticky;
+          top: 0;
+          grid-template-columns: minmax(0, 1fr) auto;
+          width: 100%;
+          min-height: 64px;
+          padding: 8px 14px;
+        }
+
+        .portal-brand { width: auto; max-width: 40px; gap: 0; }
+        .portal-brand img { width: 36px; height: 36px; flex-basis: 36px; border-radius: 10px; }
+        .portal-brand-name { display: none !important; }
+        .portal-nav { display: none !important; }
+        .header-actions { gap: 6px; }
+        .search-menu-button,
+        .robo-toggle-button { min-height: 34px; padding: 0 8px; font-size: 11px; }
+        .header-cta { display: none !important; }
+        .workspace { width: calc(100% - 24px); margin-top: 39px; }
+        .content-portal { gap: 24px; }
+        .category-tabs {
+          display: flex;
+          gap: 8px;
+          overflow-x: auto;
+          padding: 12px 0 2px;
+        }
+        .category-tabs a { min-height: 46px; padding: 0 10px; }
+        .featured-stage { height: 430px; border-radius: 16px; }
+        .featured-stage::after { top: 14px; right: 14px; }
+        .hero-intro {
+          display: block;
+          background: linear-gradient(180deg, rgba(255, 255, 255, .93) 0%, rgba(255, 255, 255, .87) 62%, rgba(223, 245, 244, .92) 100%);
+        }
+        .hero-intro-copy { height: 100%; padding: 26px 18px 20px; }
+        .hero-intro h1 { font-size: 28px; }
+        .hero-intro-lead { margin-top: 12px; font-size: 12px; }
+        .hero-intro-chips { margin-top: 12px; }
+        .hero-intro-link { margin-top: 13px; }
+        .hero-intro-art {
+          position: absolute;
+          inset: 0 0 0 auto;
+          width: 56%;
+          padding: 24px 10px 12px 0;
+          opacity: .26;
+        }
+        .hero-intro-art img { width: 100%; height: 80%; transform: rotate(5deg); }
+        .featured-copy {
+          inset: auto 0 0;
+          width: auto;
+          padding: 20px 18px 18px;
+          background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, .84) 18%, rgba(255, 255, 255, .98) 100%);
+        }
+        .featured-copy h1 { max-width: none; font-size: 31px; }
+        .featured-summary { font-size: 13px; }
+        .featured-rail,
+        .card-rail { grid-auto-columns: minmax(150px, 42vw); }
+        .card-rail .hyper-card,
+        .card-rail .free-card,
+        .card-rail .post-card,
+        .card-rail .story-card { min-height: 0; }
+        .portal-footer { width: calc(100% - 24px); }
+        .portal-footer { grid-template-columns: 1fr; gap: 24px; }
+        .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+      }
+
+      @media (max-width: 420px) {
+        .featured-stage { height: 410px; }
+        .featured-copy h1 { font-size: 28px; }
+        .featured-rail,
+        .card-rail { grid-auto-columns: minmax(178px, 72vw); }
+      }
+    </style>
+    <style data-visual-regulation>
+      :root {
+        --vl-ink: #102a43;
+        --vl-ink-strong: #071f39;
+        --vl-cyan: #11b8c7;
+        --vl-cyan-deep: #078a99;
+        --vl-yellow: #ffd34f;
+        --vl-coral: #f27478;
+        --vl-muted: #64758a;
+        --vl-line: #d8e6eb;
+        --vl-surface: #f7fbfc;
+        --vl-surface-strong: #eaf5f7;
+        --vl-white: #ffffff;
+        --vl-shadow: 0 8px 24px rgba(16, 42, 67, .08);
+        --vl-shadow-hover: 0 12px 28px rgba(16, 42, 67, .12);
+        --vl-radius-sm: 8px;
+        --vl-radius-md: 12px;
+        --vl-radius-lg: 16px;
+      }
+
+      body,
+      .app-shell {
+        background: var(--vl-surface);
+        color: var(--vl-ink);
+      }
+
+      .portal-header {
+        border-bottom: 1px solid rgba(216, 230, 235, .86);
+        background: rgba(255, 255, 255, .94);
+        box-shadow: 0 1px 0 rgba(16, 42, 67, .04);
+      }
+
+      .portal-brand img {
+        border: 0;
+        box-shadow: none;
+      }
+
+      .portal-brand-name,
+      .portal-nav a,
+      .search-menu-button,
+      .robo-toggle-button {
+        color: var(--vl-ink);
+      }
+
+      .portal-brand-name small,
+      .portal-nav a:hover,
+      .search-menu-button:hover,
+      .robo-toggle-button:hover {
+        color: var(--vl-cyan-deep);
+      }
+
+      .portal-nav a:first-child::after { background: var(--vl-cyan); }
+
+      .search-menu-button span {
+        display: inline-block;
+        margin-right: 7px;
+        color: var(--vl-cyan-deep);
+        font-size: 17px;
+        line-height: 1;
+      }
+
+      .search-menu-button b { font-weight: 850; }
+
+      .header-cta {
+        background: var(--vl-yellow);
+        box-shadow: 0 6px 14px rgba(255, 211, 79, .22);
+        color: var(--vl-ink-strong);
+      }
+
+      .search-menu-button,
+      .robo-toggle-button,
+      .search-panel-close {
+        border-color: var(--vl-line);
+        background: rgba(255, 255, 255, .78);
+        box-shadow: none;
+      }
+
+      .robo-toggle-button::before { color: var(--vl-cyan); }
+
+      .search-panel,
+      .site-menu-link {
+        border-color: var(--vl-line);
+        background: var(--vl-white);
+        box-shadow: var(--vl-shadow);
+      }
+
+      .site-menu-link { color: var(--vl-ink); }
+      .site-menu-link-icon {
+        background: var(--vl-surface-strong);
+        color: var(--vl-cyan-deep);
+      }
+
+      .category-tabs a {
+        border-color: var(--vl-line);
+        background: var(--vl-white);
+        box-shadow: var(--vl-shadow);
+        color: var(--vl-ink);
+      }
+
+      .category-tabs a::before,
+      .category-tabs a:nth-child(2)::before,
+      .category-tabs a:nth-child(3)::before,
+      .category-tabs a:nth-child(4)::before,
+      .category-tabs a:nth-child(5)::before {
+        background: var(--vl-surface-strong);
+        border: 1px solid rgba(17, 184, 199, .18);
+      }
+
+      .category-tabs a.is-active {
+        border-color: var(--vl-cyan);
+        background: var(--vl-white);
+        box-shadow: inset 0 -3px 0 var(--vl-cyan), var(--vl-shadow);
+        color: var(--vl-ink);
+      }
+
+      .featured-stage {
+        border-color: var(--vl-line);
+        border-radius: var(--vl-radius-lg);
+        background: var(--vl-surface-strong);
+        box-shadow: var(--vl-shadow);
+      }
+
+      .featured-stage::before {
+        background-image: radial-gradient(rgba(17, 184, 199, .16) 1px, transparent 1px);
+        background-size: 14px 14px;
+        opacity: .3;
+        mix-blend-mode: normal;
+      }
+
+      .featured-stage::after {
+        background: var(--vl-yellow);
+        box-shadow: 0 4px 0 rgba(16, 42, 67, .08);
+        color: var(--vl-ink-strong);
+      }
+
+      .hero-intro {
+        background:
+          radial-gradient(circle at 14% 16%, rgba(255, 211, 79, .2), transparent 18%),
+          linear-gradient(115deg, var(--vl-white) 0%, var(--vl-surface) 62%, var(--vl-surface-strong) 100%);
+      }
+
+      .hero-intro-kicker,
+      .hero-intro h1 em,
+      .hero-intro-link,
+      .featured-catch,
+      .featured-copy .eyebrow {
+        color: var(--vl-cyan-deep) !important;
+      }
+
+      .hero-intro h1,
+      .featured-copy h1,
+      .featured-copy p,
+      .featured-rail-head h2,
+      .row-heading h2 {
+        color: var(--vl-ink) !important;
+      }
+
+      .hero-intro-lead,
+      .featured-summary {
+        color: var(--vl-muted) !important;
+      }
+
+      .hero-intro-chips span,
+      .featured-chips span {
+        background: var(--vl-cyan) !important;
+        color: var(--vl-white) !important;
+      }
+
+      .hero-intro-chips span:nth-child(2),
+      .featured-chips span:nth-child(2) {
+        background: var(--vl-yellow) !important;
+        color: var(--vl-ink-strong) !important;
+      }
+
+      .hero-intro-chips span:nth-child(3),
+      .featured-chips span:nth-child(3) {
+        background: var(--vl-coral) !important;
+        color: var(--vl-white) !important;
+      }
+
+      .hero-intro-link,
+      .featured-secondary {
+        border-color: rgba(7, 138, 153, .32);
+        background: rgba(255, 255, 255, .9);
+        color: var(--vl-cyan-deep) !important;
+      }
+
+      .hero-intro-link:hover,
+      .featured-secondary:hover {
+        border-color: var(--vl-cyan);
+        background: var(--vl-white);
+      }
+
+      .hero-intro-art img { border-color: var(--vl-ink); }
+      .featured-media { background: var(--vl-surface-strong); }
+      .featured-media::after {
+        background: linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .82) 29%, rgba(255, 255, 255, .14) 64%, rgba(16, 42, 67, .12) 100%);
+      }
+
+      .featured-rail-head h2::before,
+      .row-heading h2::before,
+      .content-row:nth-of-type(3) .row-heading h2::before,
+      .content-row:nth-of-type(4) .row-heading h2::before {
+        background: var(--vl-cyan);
+      }
+
+      .featured-thumb,
+      .card-rail .hyper-card,
+      .card-rail .free-card,
+      .card-rail .post-card,
+      .card-rail .story-card {
+        border-color: var(--vl-line);
+        border-radius: var(--vl-radius-md);
+        background: var(--vl-white);
+        box-shadow: var(--vl-shadow);
+        color: var(--vl-ink);
+      }
+
+      .featured-thumb:hover,
+      .card-rail .hyper-card:hover,
+      .card-rail .free-card:hover,
+      .card-rail .post-card:hover,
+      .card-rail .story-card:hover {
+        box-shadow: var(--vl-shadow-hover);
+        transform: translateY(-3px);
+      }
+
+      .featured-thumb > span,
+      .card-rail .hyper-card > span,
+      .card-rail .free-card > span,
+      .card-rail .post-card > span,
+      .card-rail .story-card > span {
+        background: var(--vl-surface-strong);
+        color: var(--vl-cyan-deep) !important;
+      }
+
+      .featured-thumb > strong,
+      .card-rail .hyper-card h3,
+      .card-rail .free-card h3,
+      .card-rail .post-card h3,
+      .card-rail .story-card h3 {
+        color: var(--vl-ink) !important;
+      }
+
+      .featured-thumb > small,
+      .card-rail .hyper-card p,
+      .card-rail .free-card p,
+      .card-rail .post-card p,
+      .card-rail .story-card p {
+        color: var(--vl-muted) !important;
+      }
+
+      .portal-footer {
+        border-top-color: var(--vl-line);
+        color: var(--vl-ink);
+      }
+
+      .support-panel[data-menu-only] { display: none; }
+      .support-panel[data-menu-only].is-menu-visible { display: block; }
+
+      .footer-links strong { color: var(--vl-ink) !important; }
+      .footer-links a,
+      .footer-brand span { color: var(--vl-muted) !important; }
+      .footer-links a:hover { color: var(--vl-cyan-deep) !important; }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: .01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: .01ms !important;
+        }
+      }
+    </style>
+    <style data-pop-update>
+      body {
+        background-color: var(--vl-surface);
+        background-image: radial-gradient(rgba(17, 184, 199, .12) .8px, transparent .8px);
+        background-size: 18px 18px;
+      }
+
+      .category-tabs a {
+        border-width: 2px;
+        transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+      }
+
+      .category-tabs a:nth-child(1) { background: #effcff; }
+      .category-tabs a:nth-child(2) { background: #f1fbff; }
+      .category-tabs a:nth-child(3) { background: #fff9df; }
+      .category-tabs a:nth-child(4) { background: #fff1f2; }
+      .category-tabs a:nth-child(5) { background: #f0fbf5; }
+
+      .category-tabs a.is-active {
+        border-color: var(--vl-cyan);
+        background: var(--vl-cyan);
+        box-shadow: 0 4px 0 rgba(7, 138, 153, .2);
+        color: var(--vl-white);
+        transform: translateY(-2px);
+      }
+
+      .category-tabs a.is-active::before {
+        border-color: rgba(255, 255, 255, .45);
+        background: rgba(255, 255, 255, .22);
+      }
+
+      .featured-stage {
+        border: 2px solid var(--vl-cyan);
+        box-shadow: 0 7px 0 rgba(7, 138, 153, .14), 0 18px 32px rgba(16, 42, 67, .1);
+      }
+
+      .featured-stage::after {
+        display: none;
+        top: 20px;
+        right: 24px;
+        width: auto;
+        height: auto;
+        min-height: 32px;
+        padding: 0 14px;
+        border: 2px solid var(--vl-cyan);
+        border-radius: 999px;
+        background: var(--vl-white);
+        box-shadow: 0 4px 0 rgba(7, 138, 153, .16);
+        content: "3分で読める";
+        color: var(--vl-cyan-deep);
+        font-size: 11px;
+        line-height: 28px;
+        transform: none;
+      }
+
+      .featured-badge {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        z-index: 8;
+        display: inline-flex;
+        min-height: 32px;
+        align-items: center;
+        padding: 0 14px;
+        border: 2px solid var(--vl-cyan);
+        border-radius: 999px;
+        background: var(--vl-white);
+        box-shadow: 0 4px 0 rgba(7, 138, 153, .16);
+        color: var(--vl-cyan-deep);
+        font-size: 11px;
+        font-weight: 950;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .hero-intro {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(17, 184, 199, .14), transparent 21%),
+          radial-gradient(circle at 75% 84%, rgba(242, 116, 120, .1), transparent 22%),
+          linear-gradient(115deg, var(--vl-white) 0%, #f5fdff 62%, #e5f8fa 100%);
+      }
+
+      .hero-intro-kicker {
+        display: inline-flex;
+        min-height: 24px;
+        align-items: center;
+        margin-bottom: 12px;
+        padding: 0 9px;
+        border-radius: 999px;
+        background: var(--vl-surface-strong);
+        color: var(--vl-cyan-deep) !important;
+        font-size: 11px;
+      }
+
+      .hero-intro h1 { letter-spacing: -.025em; }
+      .hero-intro h1 em { color: var(--vl-coral) !important; }
+
+      .hero-intro-chips span:nth-child(1) {
+        background: var(--vl-cyan) !important;
+      }
+
+      .hero-intro-chips span:nth-child(2) {
+        background: var(--vl-yellow) !important;
+      }
+
+      .hero-intro-chips span:nth-child(3) {
+        background: var(--vl-coral) !important;
+      }
+
+      .featured-catch {
+        display: inline-flex;
+        min-height: 25px;
+        align-items: center;
+        padding: 0 9px;
+        border-radius: 999px;
+        background: var(--vl-surface-strong);
+      }
+
+      .featured-thumb,
+      .card-rail .hyper-card,
+      .card-rail .free-card,
+      .card-rail .post-card,
+      .card-rail .story-card {
+        border-width: 2px;
+      }
+
+      .featured-thumb.is-active {
+        border-color: var(--vl-cyan);
+        box-shadow: 0 4px 0 rgba(7, 138, 153, .18), var(--vl-shadow);
+      }
+
+      .featured-thumb:hover,
+      .card-rail .hyper-card:hover,
+      .card-rail .free-card:hover,
+      .card-rail .post-card:hover,
+      .card-rail .story-card:hover {
+        border-color: rgba(17, 184, 199, .65);
+        transform: translateY(-4px);
+      }
+
+      .content-row:nth-of-type(2) .row-heading h2::before { background: var(--vl-cyan); }
+      .content-row:nth-of-type(3) .row-heading h2::before { background: var(--vl-yellow); }
+      .content-row:nth-of-type(4) .row-heading h2::before { background: var(--vl-coral); }
+      .content-row:nth-of-type(5) .row-heading h2::before { background: var(--vl-cyan); }
+
+      @media (max-width: 759px) {
+        .featured-badge {
+          top: 14px;
+          right: 14px;
+          min-height: 29px;
+          padding-inline: 11px;
+          font-size: 10px;
+        }
+      }
+    </style>
+    <style data-navigation-and-layout-fix>
+      [data-feature-rail] {
+        scroll-behavior: smooth;
+      }
+
+      .featured-copy {
+        display: grid;
+        grid-template-rows: 26px 26px 64px 58px 40px 62px;
+        align-content: start;
+        gap: 6px;
+        padding: 20px 32px;
+      }
+
+      .featured-copy > .featured-catch,
+      .featured-copy > .eyebrow,
+      .featured-copy > h1,
+      .featured-copy > .featured-summary,
+      .featured-copy > .featured-actions,
+      .featured-copy > .featured-chips {
+        margin: 0;
+      }
+
+      .featured-copy > .featured-catch,
+      .featured-copy > .eyebrow {
+        min-height: 25px;
+        align-self: start;
+      }
+
+      .featured-copy > .featured-catch {
+        width: fit-content;
+        justify-self: start;
+      }
+
+      .featured-copy > h1 {
+        display: -webkit-box;
+        align-items: center;
+        overflow: hidden;
+        max-width: 100%;
+        font-size: clamp(28px, 3vw, 40px);
+        line-height: 1.1;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .featured-copy > .featured-summary {
+        display: -webkit-box;
+        max-width: 100%;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      .featured-copy > .featured-actions {
+        display: flex;
+        align-items: center;
+      }
+
+      .featured-copy > .featured-chips {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: 30px;
+        align-content: start;
+        gap: 7px;
+        min-height: 30px;
+      }
+
+      .featured-copy > .featured-chips span {
+        width: auto;
+        min-width: 0;
+        height: 30px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .featured-copy > .featured-chips span:first-child {
+        grid-column: auto;
+      }
+
+      .portal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px 36px;
+        padding: 20px 0 24px;
+      }
+
+      .footer-quick-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 20px;
+      }
+
+      .portal-footer .footer-quick-links a {
+        min-height: 26px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: var(--vl-muted) !important;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .portal-footer .footer-quick-links a:hover {
+        color: var(--vl-cyan-deep) !important;
+      }
+
+      @media (max-width: 759px) {
+        .featured-copy {
+          grid-template-rows: 26px 26px 70px 70px 46px 64px;
+          align-content: start;
+          gap: 7px;
+          padding: 20px 18px 18px;
+        }
+
+        .featured-copy > .featured-chips {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-rows: repeat(2, 30px);
+          min-height: 67px;
+        }
+
+        .portal-footer {
+          align-items: flex-start;
+          gap: 14px;
+          padding: 18px 0 22px;
+        }
+
+        .footer-quick-links {
+          gap: 8px 14px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="content-site.css?v=20260820-hero-copy-1">
+  </head>
+  <body>
+    <div class="app-shell">
+      <input class="search-panel-toggle" type="checkbox" id="search-panel-toggle" aria-hidden="true">
+      <header class="portal-header">
+        <a class="portal-brand" href="index.html" aria-label="縦長ラーニング コンテンツポータル">
+          <img src="assets/vertical-learning-logo-comic-safe-20260820.png" alt="縦長ラーニングのブランドマーク">
+          <span class="portal-brand-name">縦長ラーニング<small>VERTICAL LEARNING</small></span>
+        </a>
+
+        <nav class="portal-nav" aria-label="メインナビゲーション">
+          <a href="index.html">ホーム</a>
+          <a href="#category-navigation">カテゴリ</a>
+          <a href="#category-ai">AI学習</a>
+          <a href="#category-programming">プログラミング</a>
+          <a href="#category-english">英会話</a>
+          <a href="https://take0929.github.io/vertical-learning-lp-v3/?from=content-site" target="_blank" rel="noopener">縦長ラーニングとは</a>
+        </nav>
+
+        <div class="header-actions">
+          <label class="search-menu-button" for="search-panel-toggle" role="button" tabindex="0" aria-label="メニューを開く">
+            <span aria-hidden="true">☰</span><b>メニュー</b>
+          </label>
+          <label class="robo-toggle-button" for="paperobo-panel-toggle" role="button" tabindex="0" aria-label="ナビゲーターを開く">
+            <svg class="robo-icon-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8.01" y1="16" x2="8.01" y2="16"></line><line x1="15.99" y1="16" x2="16" y2="16"></line></svg><b class="robo-label-full">ナビゲーター</b><b class="robo-label-short">ナビ</b>
+          </label>
+        </div>
+      </header>
+
+      <section class="search-panel" aria-label="サイトメニュー">
+        <div class="search-panel-head">
+          <div>
+            <p class="panel-kicker">BOOKSHELF</p>
+            <h2>読みたいものを探す</h2>
+          </div>
+          <label class="search-panel-close" for="search-panel-toggle" role="button" tabindex="0">閉じる</label>
+        </div>
+        <nav class="site-menu-links" aria-label="サイトメニュー項目">
+          <a class="site-menu-link site-menu-link-search" href="#content-search">
+            <span class="site-menu-link-icon" aria-hidden="true">⌕</span>
+            <span><strong>検索</strong><small>学びたいテーマを探す</small></span>
+          </a>
+          <a class="site-menu-link" href="#row-faq" data-support-target="row-faq">
+            <span class="site-menu-link-icon" aria-hidden="true">?</span>
+            <span><strong>FAQ</strong><small>よくある質問を見る</small></span>
+          </a>
+          <a class="site-menu-link" href="#row-contact" data-support-target="row-contact">
+            <span class="site-menu-link-icon" aria-hidden="true">↗</span>
+            <span><strong>問い合わせ</strong><small>採用課題を相談する</small></span>
+          </a>
+          <a class="site-menu-link" href="https://take0929.github.io/vertical-learning-lp-v3/?from=content-site" target="_blank" rel="noopener noreferrer">
+            <span class="site-menu-link-icon" aria-hidden="true">V</span>
+            <span><strong>縦長ラーニングとは</strong><small>サービスの考え方を見る</small></span>
+          </a>
+          <a class="site-menu-link" href="https://tatenaga-job.com/" target="_blank" rel="noopener noreferrer">
+            <span class="site-menu-link-icon" aria-hidden="true">J</span>
+            <span><strong>縦長ジョブ</strong><small>仕事との出会いへ</small></span>
+          </a>
+          <a class="site-menu-link" href="https://www.tatetop.com/" target="_blank" rel="noopener noreferrer">
+            <span class="site-menu-link-icon" aria-hidden="true">T</span>
+            <span><strong>縦長サイトトップテン</strong><small>サイト制作の事例を見る</small></span>
+          </a>
+        </nav>
+        <form class="search-bar" id="content-search" role="search">
+          <label class="search-input">
+            <span aria-hidden="true">⌕</span>
+            <input type="search" placeholder="読みたいテーマを探す" aria-label="検索">
+          </label>
+          <select aria-label="カテゴリー" data-category-filter>
+            <option value="">すべてのカテゴリー</option>
+            <option value="ai">AI学習</option>
+            <option value="programming">プログラミング</option>
+            <option value="business-manner">ビジネスマナー</option>
+            <option value="marketing">マーケティング</option>
+            <option value="money">お金の知識</option>
+            <option value="management">マネジメント</option>
+            <option value="lifehack">ライフハック</option>
+            <option value="parenting">育児・子育て</option>
+            <option value="english">英会話</option>
+          </select>
+        </form>
+      </section>
+
+      <input class="paperobo-panel-toggle" type="checkbox" id="paperobo-panel-toggle" aria-hidden="true">
+
+      <main class="workspace">
+        <section class="content-portal" aria-label="教育コンテンツポータル">
+          <section class="static-top-hero" aria-label="縦長ラーニングのおすすめ紹介">
+            <img
+              src="assets/top-hero-static-borderless-20260820.png"
+              alt="次に読みたい一冊がきっと見つかる。漫画、AIへの質問、ショート動画で学べる縦長ラーニング"
+              width="2031"
+              height="774"
+              fetchpriority="high"
+            >
+            <p class="static-top-hero-lead">豊富な学習コンテンツから、今おすすめしたいテーマを選びました。</p>
+            <a class="static-top-hero-link" href="#category-management">続きを見る</a>
+          </section>
+
+          <nav class="category-tabs" id="category-navigation" aria-label="学習カテゴリ">
+            <a class="is-active" href="#category-ai">AI学習</a>
+            <a href="#category-programming">プログラミング</a>
+            <a href="#category-business-manner">ビジネスマナー</a>
+            <a href="#category-marketing">マーケティング</a>
+            <a href="#category-money">お金の知識</a>
+            <a href="#category-management">マネジメント</a>
+            <a href="#category-lifehack">ライフハック</a>
+            <a href="#category-parenting">育児・子育て</a>
+            <a href="#category-english">英会話</a>
+          </nav>
+
+          <p class="catalog-empty-message" role="status">条件に合うコンテンツがありません。検索語かカテゴリーを変えてみてください。</p>
+
+          <div class="catalog-groups" data-category-groups="primary"></div>
+
+          <section class="featured-showcase" aria-labelledby="featured-title">
+            <div class="featured-stage is-intro" data-feature-stage>
+              <span class="featured-badge" aria-hidden="true">3分で読める</span>
+              <div class="hero-intro" data-hero-intro aria-labelledby="hero-intro-title">
+                <div class="hero-intro-copy">
+                  <p class="hero-intro-kicker">FEATURED SELECTION</p>
+                  <h1 id="hero-intro-title">次に読みたい一冊が、<br><em>きっと見つかる。</em></h1>
+                  <p class="hero-intro-lead">95の学習コンテンツから、今おすすめしたいテーマを選びました。</p>
+                  <div class="hero-intro-chips" aria-label="縦長ラーニングの特徴">
+                    <span>漫画が中心</span>
+                    <span>AIに質問</span>
+                    <span>ショート動画</span>
+                  </div>
+                  <a class="hero-intro-link" href="#category-management">続きを見る</a>
+                </div>
+                <div class="hero-intro-art" aria-hidden="true">
+                  <img src="assets/vertical-learning-logo-comic-safe-20260820.png" alt="">
+                </div>
+              </div>
+              <a
+                class="featured-media featured-media-link"
+                data-feature-link
+                href="https://www.hypercardbook.org/hyperbook/44d73862-57f9-4491-8493-0de55d8cb975"
+                target="_blank"
+                rel="noopener"
+                aria-label="生成AI仕組み理解ガイドを開く"
+              >
+                <img
+                  data-feature-image
+                  src="assets/covers/cover-content-44d73862-57f9-4491-8493-0de55d8cb975.webp"
+                  alt="生成AI仕組み理解ガイドの表紙"
+                >
+                <div class="featured-media-glow" aria-hidden="true"></div>
+              </a>
+              <div class="featured-copy">
+                <p class="featured-catch">漫画でサクッと学べる！</p>
+                <p class="eyebrow" data-feature-kicker>採用理解 / 1話</p>
+                <h1 id="featured-title" data-feature-title>生成AI仕組み理解ガイド</h1>
+                <p class="featured-summary" data-feature-summary>
+                  むずかしいことも、1話ずつなら読める。応募前の不安を、静かにほどく学びです。
+                </p>
+                <div class="featured-actions">
+                  <label class="featured-secondary" for="paperobo-panel-toggle" role="button" tabindex="0">読みながら相談する</label>
+                </div>
+                <div class="featured-chips" aria-label="選択中のポイント">
+                  <span data-feature-signal>企業が見る信号: 期待値の整理</span>
+                  <span data-feature-time>目安時間 11分</span>
+                  <span data-feature-next-step>次に解放: 面談準備</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="featured-rail-head">
+              <div>
+                <h2>次に読む主役</h2>
+              </div>
+              <div class="row-controls" aria-label="注目カードの操作">
+                <button type="button" class="featured-step-button" data-feature-prev aria-label="前の注目へ">‹</button>
+                <button type="button" class="featured-step-button" data-feature-next-control aria-label="次の注目へ">›</button>
+              </div>
+            </div>
+
+            <div class="featured-rail" data-feature-rail aria-label="注目コンテンツのカルーセル">
+              <button class="featured-thumb hero-intro-thumb is-active" type="button" data-feature-intro aria-pressed="true">
+                <img src="assets/vertical-learning-logo-comic-safe-20260820.png" alt="縦長ラーニングの紹介サムネイル" loading="lazy">
+                <span>ABOUT</span>
+                <strong>縦長ラーニング</strong>
+                <small>漫画で3分から学ぶ</small>
+              </button>
+              <button class="featured-thumb is-active" type="button" data-feature-index="0" data-content-id="featured-interview">
+                <img src="assets/covers/cover-content-44d73862-57f9-4491-8493-0de55d8cb975.webp" alt="生成AI仕組み理解ガイドのサムネイル" loading="lazy">
+                <span>AI</span>
+                <strong>生成AI仕組み理解ガイド</strong>
+                <small>ログイン不要 · 無料</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="content-row legacy-row" aria-labelledby="row-pick" hidden>
+            <div class="row-heading">
+              <h2 id="row-pick">おすすめ</h2>
+              <div class="row-controls" aria-label="行コントロール">
+                <button type="button" data-rail-prev aria-label="今日のイチオシを前へ">‹</button>
+                <button type="button" data-rail-next aria-label="今日のイチオシを次へ">›</button>
+              </div>
+            </div>
+            <div class="card-rail" data-content-rail>
+              <a class="hyper-card dark-card content-link" data-content-id="pick-paperobo" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/paperobo-intro.html" target="_blank" rel="noopener">
+                <div class="thumb-scene paperobo-scene">
+                  <img
+                    src="https://fxtqkhfkavwtctuljrqt.supabase.co/storage/v1/object/public/HyperCardBookBucket/d9841327-418b-41fd-8657-59c3b7f7fb19/4b97b459-5aaf-4838-8643-421417ae6714___________2026_06_04_11_04_19_png.webp"
+                    alt="PapeRobo Samplesの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>AI GUIDE</span>
+                <h3>PapeRobo Samples</h3>
+                <p>8 min · 音声で学ぶ</p>
+              </a>
+              <a class="hyper-card blue-card content-link" data-content-id="pick-book-platform" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/intro-hypercardbook.html" target="_blank" rel="noopener">
+                <div class="thumb-scene book-scene">
+                  <img
+                    src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=60"
+                    alt="インタラクティブBookプラットフォームの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>INTERACTIVE</span>
+                <h3>インタラクティブBookプラットフォーム</h3>
+                <p>12 min · 体験型</p>
+              </a>
+              <a class="hyper-card green-card content-link" data-content-id="pick-stack" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/hypercardbook2.html" target="_blank" rel="noopener">
+                <div class="thumb-scene stack-scene">
+                  <img
+                    src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop"
+                    alt="Stackで学ぶコンテンツ構成の表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>STACK</span>
+                <h3>Stackで学ぶコンテンツ構成</h3>
+                <p>10 min · 実例つき</p>
+              </a>
+              <a class="hyper-card image-card content-link" data-content-id="pick-web" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/welcome-hypercardbook-world.html" target="_blank" rel="noopener">
+                <div class="thumb-scene news-scene">
+                  <img
+                    src="https://fxtqkhfkavwtctuljrqt.supabase.co/storage/v1/object/public/HyperCardBookBucket/shared-pixabay/pixabay_1052023.jpg"
+                    alt="インタラクティブWebサービス入門の表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>NEWS</span>
+                <h3>インタラクティブWebサービス入門</h3>
+                <p>6 min · ニュース解説</p>
+              </a>
+              <a class="hyper-card dark-card content-link" data-content-id="pick-ai" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/ai-agents-guide.html" target="_blank" rel="noopener">
+                <div class="thumb-scene paperobo-scene">
+                  <img
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&auto=format&fit=crop&q=70"
+                    alt="生成AIの使いどころの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>AI</span>
+                <h3>生成AIの使いどころ</h3>
+                <p>9 min · AI特化</p>
+              </a>
+              <a class="hyper-card blue-card content-link" data-content-id="pick-programming" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/hypercardbook2.html" target="_blank" rel="noopener">
+                <div class="thumb-scene book-scene">
+                  <img
+                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&auto=format&fit=crop&q=70"
+                    alt="はじめてのプログラミングの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>CODE</span>
+                <h3>はじめてのプログラミング</h3>
+                <p>13 min · 実践型</p>
+              </a>
+              <a class="hyper-card green-card content-link" data-content-id="pick-marketing" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/welcome-hypercardbook-world.html" target="_blank" rel="noopener">
+                <div class="thumb-scene stack-scene">
+                  <img
+                    src="assets/content-cover-marketing.jpg"
+                    alt="マーケティング数字の読み方の表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>MARKETING</span>
+                <h3>数字で見るマーケティング</h3>
+                <p>10 min · 初級</p>
+              </a>
+              <a class="hyper-card image-card content-link" data-content-id="pick-management" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/ai-agents-guide.html" target="_blank" rel="noopener">
+                <div class="thumb-scene news-scene">
+                  <img
+                    src="assets/content-cover-management.jpg"
+                    alt="チームを動かすマネジメントの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>MANAGE</span>
+                <h3>チームを動かすマネジメント</h3>
+                <p>12 min · ケースで学ぶ</p>
+              </a>
+            </div>
+          </section>
+
+          <section class="content-row legacy-row" aria-labelledby="row-robo" hidden>
+            <div class="row-heading">
+              <h2 id="row-robo">仕事・就職</h2>
+              <div class="row-controls" aria-label="行コントロール">
+                <button type="button" data-rail-prev aria-label="PapeRoboコンテンツを前へ">‹</button>
+                <button type="button" data-rail-next aria-label="PapeRoboコンテンツを次へ">›</button>
+              </div>
+            </div>
+            <div class="card-rail" data-content-rail>
+              <a class="free-card content-link" data-content-id="robo-amy" href="https://paperobo.hypercardbook.org/?public=MA3jZ9Znox" target="_blank" rel="noopener">
+                <div class="small-cover cover-amy">
+                  <img
+                    src="https://paperobo.hypercardbook.org/ai/default-agents/01-amy/thumbnail.png"
+                    alt="Amy from PapeRoboの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>AI GUIDE</span>
+                <h3>Amy from PapeRobo</h3>
+                <p>質問しながら進める音声ガイド体験。</p>
+              </a>
+              <a class="free-card content-link" data-content-id="robo-phone" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/paperobo-intro.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-call">
+                  <img
+                    src="https://fxtqkhfkavwtctuljrqt.supabase.co/storage/v1/object/public/HyperCardBookBucket/d9841327-418b-41fd-8657-59c3b7f7fb19/4b97b459-5aaf-4838-8643-421417ae6714___________2026_06_04_11_04_19_png.webp"
+                    alt="電話型AIのPapeRoboの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>CALL</span>
+                <h3>電話型AIのPapeRobo</h3>
+                <p>通話のように学習内容を確認できる。</p>
+              </a>
+              <a class="free-card content-link" data-content-id="robo-literacy" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/oshitara-oshimai.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-literacy">
+                  <img
+                    src="https://storage.googleapis.com/topdowncom/content/kqmyfjwWDJNNkVkY6G3mlruHqlx2/ad013454-1fd5-4fc9-952d-ede5069cd351/IMG_3608.jpeg"
+                    alt="ITリテラシー絵本シリーズの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>STORY</span>
+                <h3>ITリテラシー絵本シリーズ</h3>
+                <p>物語形式でITスキルに触れる。</p>
+              </a>
+              <a class="free-card content-link" data-content-id="robo-quark" href="https://paperobo.hypercardbook.org/?public=hVSMUWrz69" target="_blank" rel="noopener">
+                <div class="small-cover cover-amy">
+                  <img
+                    src="https://paperobo.hypercardbook.org/ai/default-agents/02-quark/thumbnail.webp"
+                    alt="ProgrammerQuarkの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>CODE</span>
+                <h3>ProgrammerQuark</h3>
+                <p>コードの考え方を会話しながら学ぶ。</p>
+              </a>
+              <a class="free-card content-link" data-content-id="robo-einstein" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/alice-einstein-bernpatent.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-call">
+                  <img
+                    src="https://paperobo.hypercardbook.org/ai/default-agents/05-%E3%82%A8%E3%83%AB%E3%83%80%E3%83%BC/thumbnail.webp"
+                    alt="歴史読本アインシュタインの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>BOOK</span>
+                <h3>歴史読本アインシュタイン</h3>
+                <p>問いかけを通じて人物像を深掘りする。</p>
+              </a>
+              <a class="free-card content-link" data-content-id="robo-interview" href="https://www.hypercardbook.org/published/c835271a-83d1-4959-88a3-48d62c24fdf3/interview-preparation-guide.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-literacy">
+                  <img
+                    src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=900&auto=format&fit=crop&q=70"
+                    alt="面談前の期待値整理の表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>CAREER</span>
+                <h3>面談前の期待値整理</h3>
+                <p>応募前に企業と自分の接点を確認する。</p>
+              </a>
+            </div>
+          </section>
+
+          <section class="content-row legacy-row" aria-labelledby="row-ai" hidden>
+            <div class="row-heading">
+              <h2 id="row-ai">ビジネススキル</h2>
+              <div class="row-controls" aria-label="行コントロール">
+                <button type="button" data-rail-prev aria-label="AIコンテンツを前へ">‹</button>
+                <button type="button" data-rail-next aria-label="AIコンテンツを次へ">›</button>
+              </div>
+            </div>
+            <div class="card-rail" data-content-rail>
+              <a class="post-card content-link" data-content-id="ai-oshitara" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/oshitara-oshimai.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://storage.googleapis.com/topdowncom/content/kqmyfjwWDJNNkVkY6G3mlruHqlx2/ad013454-1fd5-4fc9-952d-ede5069cd351/IMG_3608.jpeg"
+                    alt="押したら、おしまい！の表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <h3>押したら、おしまい！</h3>
+                <p>短編コンテンツ · 判断を学ぶ</p>
+              </a>
+              <a class="post-card content-link" data-content-id="ai-programming" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/hypercardbook2.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop"
+                    alt="プログラムを動かして学ぶ表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <h3>プログラムを動かして学ぶ</h3>
+                <p>HTML実行 · 実験型学習</p>
+              </a>
+              <a class="post-card content-link" data-content-id="ai-markdown" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/MarkdownAICard.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://www.hypercardbook.org/markdownai_logo.png"
+                    alt="執筆をファクトチェックする表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <h3>執筆をファクトチェックする</h3>
+                <p>MarkdownAI · 付箋で確認</p>
+              </a>
+              <a class="post-card content-link" data-content-id="ai-lifehack" href="https://www.hypercardbook.org/hyperbookshelf?books=68114287-e0b5-478b-a9ae-6c97645b0035,3795796b-b23a-4c43-a18e-8ea9b9e511c2,1c6ae9b2-ecdf-4eee-9ffb-da49f70b1cdc,788f5358-f651-4dfe-96cd-eae4e8185b7a,420c55c9-54ea-4302-a1ea-ba746bc24c62,f23693a4-519a-4efa-b18b-9a1d4d15c062,2e8e86c9-23a7-45a1-b72d-b069056a568a,6c56d5a4-1579-4ea8-adea-92467e4ecd75,e1850b5b-166b-4c68-8c9c-2f08af9d2228,8a1d94f7-f3d4-4293-aad2-c65635a5f3ea&title=Life%20hack%E3%80%80Learning" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&auto=format&fit=crop&q=70"
+                    alt="毎日を整えるライフハックの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <h3>毎日を整えるライフハック</h3>
+                <p>習慣化 · 朝の設計</p>
+              </a>
+              <a class="post-card content-link" data-content-id="ai-sns" href="https://www.hypercardbook.org/hyperbookshelf?books=86a32101-80dc-44a4-b629-9c2b44869e79,376bbed2-b4d5-4beb-b4e9-5559cd6b86cb,9283b4d8-d3d2-4dd0-83f7-5d9e322a461f,e2737f2a-50f0-42e8-83b5-d4a6af24fedb,f0635791-8c66-4841-b1f9-3001d5759693,19b1a8d9-2c4e-4d58-9f46-9fa4481170a0,5ea0ae76-4724-42d3-be7b-5ecddabb864b,8817b83a-db30-4d9f-b55c-d130a60e74f6,7891f3c2-ca86-4a9f-98ec-d1af368370aa,2c77bbb4-ca07-45a9-b8b2-69ddc49b019e&title=marketing%20Learning" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=900&auto=format&fit=crop&q=70"
+                    alt="はじめてのSNSマーケティングの表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <h3>はじめてのSNSマーケティング</h3>
+                <p>発信設計 · 顧客理解</p>
+              </a>
+              <a class="post-card content-link" data-content-id="ai-money" href="https://www.hypercardbook.org/hyperbookshelf?books=6b190f96-70f3-4924-bc91-921c24359537,88191bac-5266-4519-8acb-0c96759f1af1,5e639ec1-5dc3-45ee-a7b3-516ff2d362f0,42b1775a-eb13-4a25-baf4-6fa55e99588a,d9a0c970-ea27-4ffe-b788-2de9a2305de6,112630e7-c3c4-4b92-a260-94260813fe88,0390a304-adc1-491d-ac9b-81d195102b44,dec3d7a3-bab2-48c4-87e5-ca013af57bac,764f6a0a-fb94-4ec2-b843-db27d26b46ac,722fb8f9-e031-4b30-b4b1-903c5ee8cbf9&title=Financial%20knowledge%20Learning" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=900&auto=format&fit=crop&q=70"
+                    alt="家計を見直すお金の知識の表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <h3>家計を見直すお金の知識</h3>
+                <p>固定費 · 未来の準備</p>
+              </a>
+            </div>
+          </section>
+
+          <section class="content-row legacy-row" aria-labelledby="row-job" hidden>
+            <div class="row-heading">
+              <h2 id="row-job">暮らし・生活</h2>
+              <div class="row-controls" aria-label="行コントロール">
+                <button type="button" data-rail-prev aria-label="仕事理解コンテンツを前へ">‹</button>
+                <button type="button" data-rail-next aria-label="仕事理解コンテンツを次へ">›</button>
+              </div>
+            </div>
+            <div class="card-rail" data-content-rail>
+              <a class="free-card job-card content-link" data-content-id="job-company" href="https://take0929.github.io/vertical-learning-lp-v3/?from=content-site#experience" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=900&auto=format&fit=crop&q=70"
+                    alt="会社を知る表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>WORK</span>
+                <h3>会社を知る</h3>
+                <p>事業、文化、チームの判断軸を短い学習単位で確認。</p>
+              </a>
+              <a class="free-card job-card content-link" data-content-id="job-role" href="https://take0929.github.io/vertical-learning-lp-v3/?from=content-site#experience" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&auto=format&fit=crop&q=70"
+                    alt="仕事を知る表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>ROLE</span>
+                <h3>仕事を知る</h3>
+                <p>日々の役割、期待される成果、必要な姿勢を整理。</p>
+              </a>
+              <a class="free-card job-card content-link" data-content-id="job-reality" href="https://take0929.github.io/vertical-learning-lp-v3/?from=content-site#experience" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&auto=format&fit=crop&q=70"
+                    alt="現場のリアル表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>REAL</span>
+                <h3>現場のリアル</h3>
+                <p>入社前に知るべき忙しさ、連携範囲、判断場面を学ぶ。</p>
+              </a>
+              <a class="free-card job-card content-link" data-content-id="job-check" href="https://take0929.github.io/vertical-learning-lp-v3/?from=content-site#experience" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=900&auto=format&fit=crop&q=70"
+                    alt="理解チェック表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>CHECK</span>
+                <h3>理解チェック</h3>
+                <p>4択テストで認識齟齬を減らし、応募ステップへ進む。</p>
+              </a>
+              <a class="free-card job-card content-link" data-content-id="job-posting" href="https://take0929.github.io/vertical-learning-lp-v3/?from=content-site#issues" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=900&auto=format&fit=crop&q=70"
+                    alt="求人票の読み解き方表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>JOB</span>
+                <h3>求人票の読み解き方</h3>
+                <p>条件の奥にある期待値と働き方を見つける。</p>
+              </a>
+              <a class="free-card job-card content-link" data-content-id="job-interview" href="https://www.hypercardbook.org/published/c835271a-83d1-4959-88a3-48d62c24fdf3/interview-preparation-guide.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&auto=format&fit=crop&q=70"
+                    alt="面接で伝える自分らしさ表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>CAREER</span>
+                <h3>面接で伝える自分らしさ</h3>
+                <p>経験を言葉にして、会話の準備を整える。</p>
+              </a>
+              <a class="free-card job-card content-link" data-content-id="job-parenting" href="https://www.hypercardbook.org/hyperbookshelf?books=4b2b406f-d2f1-410e-8f52-109d19a0f804,5aaf781e-039b-400b-8baf-782c46c26559,16908e1c-8713-4d55-8dd8-45e31f9561cc,1efc8818-2acb-4ed2-9f1c-f84db82420a7,b69ae615-8faf-4364-91d0-b344943ae773,36ac5cea-0bdc-434a-b913-709e14dfa85c,c845815f-fa77-4836-b015-00422033b952,193e62da-2012-430d-a373-64d984574b3c,7622ce32-6a53-45fa-a905-fa952060ba3b,a8297e1e-fd65-4aec-aedc-8544fb419c56,45fe041a-2d86-4fd9-8ea7-829e8efb4e49&title=Child-rearing%20Learning" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="assets/content-cover-parenting.jpg"
+                    alt="育児と仕事の段取り表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>PARENT</span>
+                <h3>育児と仕事の段取り</h3>
+                <p>家庭と仕事を分けすぎず、無理なく続ける準備。</p>
+              </a>
+              <a class="free-card job-card content-link" data-content-id="job-management" href="https://www.hypercardbook.org/published/d9841327-418b-41fd-8657-59c3b7f7fb19/ai-agents-guide.html" target="_blank" rel="noopener">
+                <div class="small-cover cover-post">
+                  <img
+                    src="assets/content-cover-management-lead.jpg"
+                    alt="マネジメントの最初の一歩表紙"
+                    loading="lazy"
+                  >
+                </div>
+                <span>LEAD</span>
+                <h3>マネジメントの最初の一歩</h3>
+                <p>任せ方、聞き方、振り返り方を短く学ぶ。</p>
+              </a>
+            </div>
+          </section>
+
+          <div class="catalog-groups" data-category-groups="secondary"></div>
+
+          <section class="portal-promise" aria-labelledby="portal-promise-title">
+            <div class="promise-hero-intro">
+              <div class="promise-copy">
+                <p class="promise-kicker">MANGA LEARNING, OPEN TO EVERYONE</p>
+                <h1 id="portal-promise-title"><span>漫画でサクッと。</span><br><em>知識が身につく。</em></h1>
+                <p>ログインなし、広告なし、ぜんぶ無料。気になるテーマを選んで、1話ずつ自分のペースで楽しめます。</p>
+              </div>
+              <div class="promise-hero-art" aria-hidden="true">
+                <span>1話<br>3分</span>
+                <img src="assets/vertical-learning-logo-comic-safe-20260820.png" alt="">
+              </div>
+            </div>
+            <div class="promise-points" role="list" aria-label="利用時の特徴">
+              <div role="listitem"><strong>ログイン不要</strong><span>開いたらすぐ読める</span></div>
+              <div role="listitem"><strong>広告なし</strong><span>学びを中断しない</span></div>
+              <div role="listitem"><strong>全コンテンツ無料</strong><span>気になるだけ試せる</span></div>
+              <div role="listitem"><strong>9カテゴリー</strong><span>テーマ選びで迷わない</span></div>
+            </div>
+            <div class="learning-modes" aria-label="3つの学び方">
+              <div><span>01</span><strong>漫画で学ぶ</strong><small>絵とストーリーで、むずかしい話も軽やかに。</small></div>
+              <div><span>02</span><strong>PapeRoboに質問</strong><small>ナビゲーターを開いて、AIにその場で聞ける。</small></div>
+              <div><span>03</span><strong>ショート動画でも学ぶ</strong><small>短い時間で要点をつかむ学び方にも対応（順次対応）。</small></div>
+            </div>
+          </section>
+
+          <section class="support-panel" data-menu-only aria-labelledby="row-faq">
+            <div class="row-heading">
+              <h2 id="row-faq">FAQ</h2>
+              <div class="row-controls" aria-label="行コントロール">
+                <button type="button" aria-label="前へ">‹</button>
+                <button type="button" aria-label="次へ">›</button>
+              </div>
+            </div>
+            <div class="faq-grid">
+              <details class="faq-item" open>
+                <summary>動画求人との違いは何ですか？</summary>
+                <p>視聴して終わるのではなく、学習カードを通して理解の深さや答え方の傾向まで見える設計です。</p>
+              </details>
+              <details class="faq-item">
+                <summary>採用ミスマッチはどう減らせますか？</summary>
+                <p>4択テストや段階的な学習の途中で、期待値のズレや理解不足を前もって見つけやすくします。</p>
+              </details>
+              <details class="faq-item">
+                <summary>求職者にとってのメリットは？</summary>
+                <p>企業を受けに行く前に仕事の輪郭が見えるので、自分に合う会社を選びやすくなります。</p>
+              </details>
+              <details class="faq-item">
+                <summary>導入はどのくらいの規模から始められますか？</summary>
+                <p>まずは小さく試しながら、企業ごとに学習体験の設計を整えていく想定です。</p>
+              </details>
+            </div>
+          </section>
+
+          <section class="support-panel contact-panel" data-menu-only aria-labelledby="row-contact">
+            <div class="row-heading">
+              <div>
+                <h2 id="row-contact">問い合わせフォーム</h2>
+                <p class="section-lead">採用課題や学習コンテンツの設計を、静かに相談するための入口です。</p>
+              </div>
+            </div>
+            <div class="contact-layout">
+              <div class="contact-copy">
+                <div class="contact-points">
+                  <div><strong>START</strong><span>小さく試して設計を整える</span></div>
+                  <div><strong>ALIGN</strong><span>期待値のズレを整理</span></div>
+                  <div><strong>GUIDE</strong><span>ナビゲーターで説明も同時進行</span></div>
+                </div>
+                <p>
+                  まずは現状の採用課題を聞かせてもらい、どこから学習体験に変えると効果が出やすいかを一緒に見ます。
+                </p>
+              </div>
+              <form class="contact-form" id="contact-form">
+                <label>
+                  会社名
+                  <input type="text" name="company" placeholder="例: 株式会社サンプル" required>
+                </label>
+                <label>
+                  お名前
+                  <input type="text" name="name" placeholder="例: 山田 太郎" required>
+                </label>
+                <label>
+                  メールアドレス
+                  <input type="email" name="email" placeholder="example@company.com" required>
+                </label>
+                <label>
+                  相談内容
+                  <select name="topic">
+                    <option>テスト導入の相談</option>
+                    <option>採用ミスマッチの相談</option>
+                    <option>早期離職の相談</option>
+                    <option>まずは概要だけ知りたい</option>
+                  </select>
+                </label>
+                <label class="contact-message">
+                  詳細
+                  <textarea name="message" rows="4" placeholder="今の採用課題や、検討したい職種・人数などをお書きください。" required></textarea>
+                </label>
+                <button type="submit" class="contact-button">導入について相談する</button>
+                <p class="form-note" id="form-note" aria-live="polite"></p>
+              </form>
+            </div>
+          </section>
+        </section>
+
+        <aside class="phone-preview" aria-label="PapeRoboナビゲーター">
+          <div class="phone-shell">
+            <div class="phone-panel-head">
+              <div>
+                <strong>PapeRobo Navigator</strong>
+                <span>コンテンツを見ながら相談できます</span>
+              </div>
+              <label for="paperobo-panel-toggle" role="button" tabindex="0" aria-label="ナビゲーターを閉じる">閉じる</label>
+            </div>
+            <div class="phone-screen">
+              <iframe
+                class="paperobo-frame"
+                src="https://paperobo.hypercardbook.org/?public=RVM8ipFxRg"
+                title="PapeRobo"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allow="autoplay; microphone; camera; clipboard-write"
+              ></iframe>
+            </div>
+            <a
+              class="paperobo-open-link"
+              href="https://paperobo.hypercardbook.org/?public=RVM8ipFxRg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              PapeRoboを別画面で開く
+            </a>
+          </div>
+        </aside>
+
+      </main>
+
+      <footer class="portal-footer">
+        <div class="footer-brand">
+          <img src="assets/vertical-learning-logo-comic-safe-20260820.png" alt="" aria-hidden="true">
+          <div>
+            <strong>縦長ラーニング</strong>
+            <span>漫画を読むように、明日から役立つ知識を。</span>
+          </div>
+        </div>
+        <nav class="footer-quick-links" aria-label="関連リンク">
+          <a href="https://take0929.github.io/vertical-learning-lp-v3/?from=content-site" target="_blank" rel="noopener">縦長ラーニングとは</a>
+          <a href="https://tatenaga-job.com/" target="_blank" rel="noopener">縦長ジョブ</a>
+          <a href="https://www.tatetop.com/" target="_blank" rel="noopener">縦長サイトトップテン</a>
+        </nav>
+      </footer>
+    </div>
+    <script src="content-data.js?v=20260807-generated-covers-v2"></script>
+    <script src="script.js?v=20260820-logo-safe-1"></script>
+  </body>
+</html>

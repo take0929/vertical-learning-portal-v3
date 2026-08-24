@@ -1389,7 +1389,7 @@ const categoryCatalog = [
         "categoryLabel": "英会話",
         "categoryCode": "EN",
         "title": "恋する英会話：気になるあの人と距離を縮める魔法のフレーズ",
-        "href": "https://www.hypercardbook.org/hyperbook/1b5f9be2-cdee-42bc-a69a-5b6986b915eb?from=hyperbookshelf&books=062cfceb-24da-4188-a96f-064243aed735%2C25ea81aa-6dc2-454c-9146-f245fb8357b2%2C7df66f36-95e7-4609-a645-af6474a1fac4%2C27cff347-bf3e-41c3-bf56-884e41778692%2C8fd5ed1c-554c-4c48-89cc-0624139d2e4f%2Cc6f261bc-1400-4cd3-ba65-a254d7a7db3b%2C1b5f9be2-cdee-42bc-a69a-5b6986b915eb%2C7ba9de43-de2b-4495-9477-773536acb8ce%2C799492f7-5f1c-44df-bb1e-fe165de424bc%2Cc7062505-9dc7-4f49-bf30-fedf80a81f60&title=English+Conversation+Learning",
+        "href": "https://www.hypercardbook.org/hyperbook/04e7238e-e3e0-4c10-8b04-705906ee3a03?from=home",
         "image": "assets/covers/cover-content-1b5f9be2-cdee-42bc-a69a-5b6986b915eb.webp",
         "alt": "恋する英会話：気になるあの人と距離を縮める魔法のフレーズの表紙",
         "kicker": "英会話",

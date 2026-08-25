@@ -467,7 +467,7 @@ const categoryCatalog = [
         "categoryLabel": "ビジネスマナー",
         "categoryCode": "BIZ",
         "title": "就活生のための必須ビジネスマナー",
-        "href": "https://www.hypercardbook.org/hyperbook/60cf7f48-e859-4620-a3bf-cbd223ba41fd?from=hyperbookshelf&books=c7582e6a-bf5f-4682-804d-2917e5540aca%2C20002694-2e36-4890-9a05-6e2e6541c2de%2Caeec5aca-82b7-450d-a0d5-225f5f1d8e5b%2Cf7069491-2b2b-4d86-9d80-09c062d83f1d%2C4a5e5429-6bed-4298-ac8e-0ea8fbde0679%2Cb788d65f-c8f9-4b00-9ed6-c96eb353f669%2C409379ea-3b2d-47f3-8bcc-d602dd1418b0%2C60cf7f48-e859-4620-a3bf-cbd223ba41fd%2C7f0723a8-ca66-46dc-8585-1ae89dacd9cb%2C40762d04-994e-4e59-a83b-38666982a9b4&title=Recruit+Learning",
+        "href": "https://www.hypercardbook.org/hyperbook/63d55d31-8de0-4a15-b22a-1e19ff5585af?from=home",
         "image": "assets/covers/cover-content-60cf7f48-e859-4620-a3bf-cbd223ba41fd.webp",
         "alt": "就活生のための必須ビジネスマナーの表紙",
         "kicker": "ビジネスマナー",

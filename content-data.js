@@ -991,7 +991,7 @@ const categoryCatalog = [
         "categoryLabel": "ライフハック",
         "categoryCode": "LIFE",
         "title": "これだけは覚えておきたい掃除のコツ",
-        "href": "https://www.hypercardbook.org/hyperbook/68114287-e0b5-478b-a9ae-6c97645b0035?from=hyperbookshelf&books=68114287-e0b5-478b-a9ae-6c97645b0035%2C3795796b-b23a-4c43-a18e-8ea9b9e511c2%2C1c6ae9b2-ecdf-4eee-9ffb-da49f70b1cdc%2C788f5358-f651-4dfe-96cd-eae4e8185b7a%2C420c55c9-54ea-4302-a1ea-ba746bc24c62%2Cf23693a4-519a-4efa-b18b-9a1d4d15c062%2C2e8e86c9-23a7-45a1-b72d-b069056a568a%2C6c56d5a4-1579-4ea8-adea-92467e4ecd75%2Ce1850b5b-166b-4c68-8c9c-2f08af9d2228%2C8a1d94f7-f3d4-4293-aad2-c65635a5f3ea&title=Life+hack%E3%80%80Learning",
+        "href": "https://www.hypercardbook.org/hyperbook/d5ce76bd-71f9-4bf1-8ab4-b0d76d474890?from=home",
         "image": "assets/covers/cover-content-68114287-e0b5-478b-a9ae-6c97645b0035.webp",
         "alt": "これだけは覚えておきたい掃除のコツの表紙",
         "kicker": "ライフハック",

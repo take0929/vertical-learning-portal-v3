@@ -169,7 +169,7 @@ const categoryCatalog = [
         "categoryLabel": "プログラミング",
         "categoryCode": "CODE",
         "title": "エンジニアになりたい人向けのパソコンの知識",
-        "href": "https://www.hypercardbook.org/hyperbook/7765973c-1453-4bef-a31c-6e90da8bb59a",
+        "href": "https://www.hypercardbook.org/hyperbook/4baee01b-d4bd-43f9-b276-9d779e85eca5?from=home",
         "image": "assets/covers/cover-content-7765973c-1453-4bef-a31c-6e90da8bb59a.webp",
         "alt": "エンジニアになりたい人向けのパソコンの知識の表紙",
         "kicker": "プログラミング",

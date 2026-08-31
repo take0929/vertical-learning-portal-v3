@@ -29,7 +29,7 @@ const categoryCatalog = [
         "categoryLabel": "AI学習",
         "categoryCode": "AI",
         "title": "生成AI仕組み理解ガイド",
-        "href": "https://www.hypercardbook.org/hyperbook/44d73862-57f9-4491-8493-0de55d8cb975?from=hyperbookshelf&books=e1ba5a54-3078-4b5f-bf72-d2a0f69720a1%2C44d73862-57f9-4491-8493-0de55d8cb975%2Cfd024caa-0e4c-4f05-b901-4117d6227384%2Ca30c4b6b-212c-4667-8eb4-c1466ae15075%2Cc268c671-ab21-4c0e-ad38-cffd742a914c%2C37b60603-7fb1-4e89-8501-09cf8d7453b8%2C0909411b-8dc7-4d8b-8b1a-817c2838e1d0%2C3dfcda9f-766b-4d04-9b83-cdd6b4311816%2C8c9d6bd4-5b29-4880-8326-ab6afe3c47bf%2Cc440e740-aeeb-4923-a9ce-322a3d9e43f7%2C603da6db-bc9b-4f35-bb11-cd7498e415dd%2C4ad26f80-a652-4115-a965-57507701b0a1&title=AI+Learning",
+        "href": "https://www.hypercardbook.org/hyperbook/61174ecd-a743-4af5-9b5e-fda56f42dbd4?from=home",
         "image": "assets/covers/cover-content-44d73862-57f9-4491-8493-0de55d8cb975.webp",
         "alt": "生成AI仕組み理解ガイドの表紙",
         "kicker": "AI学習",

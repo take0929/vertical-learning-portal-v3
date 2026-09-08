@@ -1197,7 +1197,7 @@ const categoryCatalog = [
         "categoryLabel": "育児・子育て",
         "categoryCode": "FAMILY",
         "title": "共働きの最適解：チームで乗り切る育児と家庭運営の戦略",
-        "href": "https://www.hypercardbook.org/hyperbook/b69ae615-8faf-4364-91d0-b344943ae773?from=hyperbookshelf&books=4b2b406f-d2f1-410e-8f52-109d19a0f804%2C5aaf781e-039b-400b-8baf-782c46c26559%2C16908e1c-8713-4d55-8dd8-45e31f9561cc%2C1efc8818-2acb-4ed2-9f1c-f84db82420a7%2Cb69ae615-8faf-4364-91d0-b344943ae773%2C36ac5cea-0bdc-434a-b913-709e14dfa85c%2Cc845815f-fa77-4836-b015-00422033b952%2C193e62da-2012-430d-a373-64d984574b3c%2C7622ce32-6a53-45fa-a905-fa952060ba3b%2Ca8297e1e-fd65-4aec-aedc-8544fb419c56%2C45fe041a-2d86-4fd9-8ea7-829e8efb4e49%2Cf86fb66f-08c0-4567-82f8-75c78848df32&title=Child-rearing+Learning",
+        "href": "https://www.hypercardbook.org/hyperbook/7f166997-0fc6-4b85-8b38-b2a7df2b228d?from=home",
         "image": "assets/covers/cover-content-b69ae615-8faf-4364-91d0-b344943ae773.webp",
         "alt": "共働きの最適解：チームで乗り切る育児と家庭運営の戦略の表紙",
         "kicker": "育児・子育て",

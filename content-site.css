@@ -3649,7 +3649,7 @@ body.navigator-open {
 
 .category-tabs {
   display: grid !important;
-  grid-template-columns: repeat(9, minmax(118px, 1fr));
+  grid-template-columns: repeat(11, minmax(118px, 1fr));
   gap: 8px;
   overflow-x: auto;
   padding: 2px 2px 10px;
@@ -3701,6 +3701,33 @@ body.navigator-open {
   border: 1px dashed #b9d5df;
   color: #50667a;
   text-align: center;
+}
+
+.catalog-card-coming-soon {
+  cursor: default;
+}
+
+.catalog-cover-coming-soon {
+  display: grid;
+  min-height: 176px;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  background:
+    linear-gradient(135deg, rgba(19, 179, 197, 0.1), rgba(245, 200, 59, 0.14)),
+    #f7fbfc;
+}
+
+.coming-soon-mark {
+  color: #0b93a4;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.coming-soon-title {
+  color: #25455f;
+  font-size: 20px;
 }
 
 body.has-empty-search .catalog-empty-message {

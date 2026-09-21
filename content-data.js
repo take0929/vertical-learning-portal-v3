@@ -1440,6 +1440,80 @@ const categoryCatalog = [
         "featured": false
       }
     ]
+  },
+  {
+    "id": "fde",
+    "label": "FDE",
+    "code": "FDE",
+    "description": "FDEの考え方と実践を漫画で学ぶ",
+    "shelfUrl": "https://www.hypercardbook.org/hyperbookshelf?books=a8ff30ca-1cd8-4180-87f7-4d5075bbc49f,ecc8d70c-20d4-41af-9108-66e70d0f0f6f,9d488375-96e8-4ead-bf3e-3a7adfae3acc,b1ae4e00-f17b-4904-ac5d-3efd5936fe41&title=FDE",
+    "count": 4,
+    "entries": [
+      {
+        "id": "content-a8ff30ca-1cd8-4180-87f7-4d5075bbc49f",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "FDEって何？現場で戦うエンジニア",
+        "href": "https://www.hypercardbook.org/hyperbook/a8ff30ca-1cd8-4180-87f7-4d5075bbc49f?from=home",
+        "image": "assets/covers/fde-a8ff30ca.webp",
+        "alt": "FDEって何？現場で戦うエンジニアの表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 900,
+        "featured": false
+      },
+      {
+        "id": "content-ecc8d70c-20d4-41af-9108-66e70d0f0f6f",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "顧客の『本当の課題』を見つけろ！",
+        "href": "https://www.hypercardbook.org/hyperbook/ecc8d70c-20d4-41af-9108-66e70d0f0f6f?from=home",
+        "image": "assets/covers/fde-ecc8d70c.webp",
+        "alt": "顧客の『本当の課題』を見つけろ！の表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 901,
+        "featured": false
+      },
+      {
+        "id": "content-9d488375-96e8-4ead-bf3e-3a7adfae3acc",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "72時間でプロトタイプを作れ！",
+        "href": "https://www.hypercardbook.org/hyperbook/9d488375-96e8-4ead-bf3e-3a7adfae3acc?from=home",
+        "image": "assets/covers/fde-9d488375.webp",
+        "alt": "72時間でプロトタイプを作れ！の表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 902,
+        "featured": false
+      },
+      {
+        "id": "content-b1ae4e00-f17b-4904-ac5d-3efd5936fe41",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "AI×FDE 最強の仕事術",
+        "href": "https://www.hypercardbook.org/hyperbook/b1ae4e00-f17b-4904-ac5d-3efd5936fe41?from=home",
+        "image": "assets/covers/fde-b1ae4e00.webp",
+        "alt": "AI×FDE 最強の仕事術の表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 903,
+        "featured": false
+      }
+    ]
+  },
+  {
+    "id": "etc",
+    "label": "etc",
+    "code": "ETC",
+    "description": "これから追加されるテーマ",
+    "count": 0,
+    "entries": []
   }
 ];
 

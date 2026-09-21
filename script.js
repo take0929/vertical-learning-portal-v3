@@ -51,6 +51,8 @@ const comicLinesByCategory = {
   lifehack: "今日から使える",
   parenting: "大丈夫！",
   english: "Let's try!",
+  fde: "つくってみよう！",
+  etc: "準備中！",
 };
 
 function createCoverArt(item, className = "catalog-cover-art", variant = 0) {
@@ -96,7 +98,13 @@ function createCatalogRow(category) {
   titleGroup.append(
     createElement("span", "catalog-row-code", category.code),
     createElement("h2", "", category.label),
-    createElement("p", "", `${category.description} · 全${category.count}コンテンツ`),
+    createElement(
+      "p",
+      "",
+      category.entries.length
+        ? `${category.description} · 全${category.count}コンテンツ`
+        : `${category.description} · Coming soon`,
+    ),
   );
   titleGroup.querySelector("h2").id = `category-${category.id}-title`;
 
@@ -119,10 +127,31 @@ function createCatalogRow(category) {
   next.setAttribute("aria-label", `${category.label}を次へ`);
   controls.append(previous, next);
   actions.append(shelfLink, controls);
+  if (!category.entries.length) {
+    shelfLink.remove();
+    controls.remove();
+  }
   heading.append(titleGroup, actions);
 
   const rail = createElement("div", "card-rail catalog-rail");
   rail.dataset.contentRail = "";
+
+  if (!category.entries.length) {
+    const comingSoon = createElement("div", "catalog-card catalog-card-coming-soon");
+    comingSoon.setAttribute("role", "status");
+    const cover = createElement("div", "catalog-cover catalog-cover-coming-soon");
+    cover.append(
+      createElement("span", "coming-soon-mark", "COMING SOON"),
+      createElement("strong", "coming-soon-title", "準備中"),
+    );
+    const copy = createElement("div", "catalog-card-copy");
+    copy.append(
+      createElement("small", "catalog-card-category", category.label),
+      createElement("p", "", "新しいテーマを準備しています"),
+    );
+    comingSoon.append(cover, copy);
+    rail.append(comingSoon);
+  }
 
   category.entries.forEach((item, index) => {
     const card = createElement("a", "catalog-card content-link");

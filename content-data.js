@@ -1447,7 +1447,7 @@ const categoryCatalog = [
     "code": "FDE",
     "description": "FDEの考え方と実践を漫画で学ぶ",
     "shelfUrl": "https://www.hypercardbook.org/hyperbookshelf?books=a8ff30ca-1cd8-4180-87f7-4d5075bbc49f,ecc8d70c-20d4-41af-9108-66e70d0f0f6f,9d488375-96e8-4ead-bf3e-3a7adfae3acc,b1ae4e00-f17b-4904-ac5d-3efd5936fe41&title=FDE",
-    "count": 4,
+    "count": 5,
     "entries": [
       {
         "id": "content-a8ff30ca-1cd8-4180-87f7-4d5075bbc49f",
@@ -1503,6 +1503,20 @@ const categoryCatalog = [
         "kicker": "FDE",
         "meta": "漫画で学ぶ · ログイン不要 · 無料",
         "order": 903,
+        "featured": false
+      },
+      {
+        "id": "content-2ff8724a-d1de-48f3-a32c-60b7bd227521",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "コードを書くだけじゃダメですか？",
+        "href": "https://www.hypercardbook.org/hyperbook/2ff8724a-d1de-48f3-a32c-60b7bd227521?from=home",
+        "image": "assets/covers/fde-2ff8724a.webp",
+        "alt": "コードを書くだけじゃダメですか？の表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 904,
         "featured": false
       }
     ]

@@ -1446,7 +1446,7 @@ const categoryCatalog = [
     "label": "FDE",
     "code": "FDE",
     "description": "FDEの考え方と実践を漫画で学ぶ",
-    "shelfUrl": "https://www.hypercardbook.org/hyperbookshelf?books=a8ff30ca-1cd8-4180-87f7-4d5075bbc49f,ecc8d70c-20d4-41af-9108-66e70d0f0f6f,9d488375-96e8-4ead-bf3e-3a7adfae3acc,b1ae4e00-f17b-4904-ac5d-3efd5936fe41,2ff8724a-d1de-48f3-a32c-60b7bd227521&title=FDE",
+    "shelfUrl": "https://www.hypercardbook.org/hyperbookshelf?books=2ff8724a-d1de-48f3-a32c-60b7bd227521,9d488375-96e8-4ead-bf3e-3a7adfae3acc,ecc8d70c-20d4-41af-9108-66e70d0f0f6f,a8ff30ca-1cd8-4180-87f7-4d5075bbc49f,b1ae4e00-f17b-4904-ac5d-3efd5936fe41&title=FDE",
     "count": 5,
     "entries": [
       {

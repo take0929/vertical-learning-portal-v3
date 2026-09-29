@@ -1447,7 +1447,7 @@ const categoryCatalog = [
     "code": "FDE",
     "description": "FDEの考え方と実践を漫画で学ぶ",
     "shelfUrl": "https://www.hypercardbook.org/hyperbookshelf?books=2ff8724a-d1de-48f3-a32c-60b7bd227521,9d488375-96e8-4ead-bf3e-3a7adfae3acc,ecc8d70c-20d4-41af-9108-66e70d0f0f6f,a8ff30ca-1cd8-4180-87f7-4d5075bbc49f,b1ae4e00-f17b-4904-ac5d-3efd5936fe41&title=FDE",
-    "count": 5,
+    "count": 8,
     "entries": [
       {
         "id": "content-a8ff30ca-1cd8-4180-87f7-4d5075bbc49f",
@@ -1517,6 +1517,48 @@ const categoryCatalog = [
         "kicker": "FDE",
         "meta": "漫画で学ぶ · ログイン不要 · 無料",
         "order": 904,
+        "featured": false
+      },
+      {
+        "id": "content-fc40e094-a2a3-41f8-9aa6-35d3219925f1",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "その機能、本当に必要ですか？",
+        "href": "https://www.hypercardbook.org/hyperbook/fc40e094-a2a3-41f8-9aa6-35d3219925f1?from=home",
+        "image": "assets/covers/fde-fc40e094.webp",
+        "alt": "その機能、本当に必要ですか？の表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 905,
+        "featured": false
+      },
+      {
+        "id": "content-0aa46bd4-8cb2-4012-9820-50159cb2af64",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "炎上プロジェクトを救え！",
+        "href": "https://www.hypercardbook.org/hyperbook/0aa46bd4-8cb2-4012-9820-50159cb2af64?from=home",
+        "image": "assets/covers/fde-0aa46bd4.webp",
+        "alt": "炎上プロジェクトを救え！の表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 906,
+        "featured": false
+      },
+      {
+        "id": "content-b101e5e6-f793-4b26-90f7-22eb0af3977d",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "失敗から始まるFDE",
+        "href": "https://www.hypercardbook.org/hyperbook/b101e5e6-f793-4b26-90f7-22eb0af3977d?from=home",
+        "image": "assets/covers/fde-b101e5e6.webp",
+        "alt": "失敗から始まるFDEの表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 907,
         "featured": false
       }
     ]

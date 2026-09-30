@@ -1447,7 +1447,7 @@ const categoryCatalog = [
     "code": "FDE",
     "description": "FDEの考え方と実践を漫画で学ぶ",
     "shelfUrl": "https://www.hypercardbook.org/hyperbookshelf?books=2ff8724a-d1de-48f3-a32c-60b7bd227521,9d488375-96e8-4ead-bf3e-3a7adfae3acc,ecc8d70c-20d4-41af-9108-66e70d0f0f6f,a8ff30ca-1cd8-4180-87f7-4d5075bbc49f,b1ae4e00-f17b-4904-ac5d-3efd5936fe41&title=FDE",
-    "count": 8,
+    "count": 9,
     "entries": [
       {
         "id": "content-a8ff30ca-1cd8-4180-87f7-4d5075bbc49f",
@@ -1559,6 +1559,20 @@ const categoryCatalog = [
         "kicker": "FDE",
         "meta": "漫画で学ぶ · ログイン不要 · 無料",
         "order": 907,
+        "featured": false
+      },
+      {
+        "id": "content-2255f21b-e983-4bbc-8535-5e04b1b71339",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "世界を飛び回るFDE",
+        "href": "https://www.hypercardbook.org/hyperbook/2255f21b-e983-4bbc-8535-5e04b1b71339?from=home",
+        "image": "assets/covers/fde-2255f21b.webp",
+        "alt": "世界を飛び回るFDEの表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 908,
         "featured": false
       }
     ]

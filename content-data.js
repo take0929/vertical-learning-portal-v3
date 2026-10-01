@@ -1447,7 +1447,7 @@ const categoryCatalog = [
     "code": "FDE",
     "description": "FDEの考え方と実践を漫画で学ぶ",
     "shelfUrl": "https://www.hypercardbook.org/hyperbookshelf?books=2ff8724a-d1de-48f3-a32c-60b7bd227521,9d488375-96e8-4ead-bf3e-3a7adfae3acc,ecc8d70c-20d4-41af-9108-66e70d0f0f6f,a8ff30ca-1cd8-4180-87f7-4d5075bbc49f,b1ae4e00-f17b-4904-ac5d-3efd5936fe41&title=FDE",
-    "count": 9,
+    "count": 10,
     "entries": [
       {
         "id": "content-a8ff30ca-1cd8-4180-87f7-4d5075bbc49f",
@@ -1573,6 +1573,20 @@ const categoryCatalog = [
         "kicker": "FDE",
         "meta": "漫画で学ぶ · ログイン不要 · 無料",
         "order": 908,
+        "featured": false
+      },
+      {
+        "id": "content-57dbfa81-aefb-4f4a-abfe-fc0a0a79f8aa",
+        "categoryId": "fde",
+        "categoryLabel": "FDE",
+        "categoryCode": "FDE",
+        "title": "新人FDE、最初の100日",
+        "href": "https://www.hypercardbook.org/hyperbook/57dbfa81-aefb-4f4a-abfe-fc0a0a79f8aa?from=home",
+        "image": "assets/covers/fde-57dbfa81.webp",
+        "alt": "新人FDE、最初の100日の表紙",
+        "kicker": "FDE",
+        "meta": "漫画で学ぶ · ログイン不要 · 無料",
+        "order": 909,
         "featured": false
       }
     ]
